@@ -1,0 +1,8 @@
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name   %>
+  <%= f.input :image_url %>
+  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+
+<% end %>
+
+<%= link_to "Back to index", cocktails_path  %>
