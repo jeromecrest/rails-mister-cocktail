@@ -15,6 +15,13 @@
   </head>
 
   <body>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.doitinparis.com/files/2016/bars_restos/thumbs-1180x525/dirty-dick.jpg);">
+      <div class="container">
+        <h1>Welcome to Jay's Cocktail</h1>
+        <p>Best cocktails in Marseille !</p>
+        <%= link_to 'Create a new cocktail !', new_cocktail_path, class:"btn btn-secondary"%>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
