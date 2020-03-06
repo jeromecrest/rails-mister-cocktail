@@ -27,11 +27,34 @@
   <div>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.input :description%>
-      <%= f.association :ingredient, class: "select2"%>
+      <%= f.association :ingredient%>
       <%= f.submit "Add this ingredient", class: "btn btn-secondary" %>
     <% end %>
      <%= link_to "See all cocktails", cocktails_path %>
   </div>
 
+  </div>
+</div>
+
+<div class="container pt-3">
+  <h1>Comments from the community</h1>
+  <div class="reviews">
+    <div>
+     <% @reviews.each do |review| %>
+       <ul>
+         <li><%= review.content%> <%= review.rating %></li>
+       </ul>
+     <% end %>
+    </div>
+
+
+    <div>
+      <p> <strong>Add your comment</strong> </p>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+        <%= f.input :content%>
+        <%= f.input :rating%>
+        <%= f.submit "Add this review", class: "btn btn-secondary" %>
+      <% end %>
+    </div>
   </div>
 </div>

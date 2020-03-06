@@ -9,6 +9,8 @@ class CocktailsController < ApplicationController
     @dose = Dose.new
     ingredients = Ingredient.all
     @ingredient_array = []
+    @review = Review.new
+    @reviews = Review.all
     ingredients.each do |ingredient|
       @ingredient_array << ingredient.name
     end
@@ -52,4 +54,5 @@ class CocktailsController < ApplicationController
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
   end
+
 end
